@@ -19,13 +19,17 @@ Linear lists
       -- LIFO (stack) <last in first out>
 
 List ADT:
-Def: A list of elements of type T is a finite, ordered sequence of elements of
+Def: 
+
+A list of elements of type T is a finite, ordered sequence of elements of
 T.
+
 Basic concepts:
    - A list is `empty` when it contains no elements.
    - The number of elements currently stored is the length (size) of the list.
    - The beginning is called the `head`, the end is called the `tail` of the
      list.
+
 Basic operations:
    - Construct a list, leave it empty.
    - Insert an element.
@@ -33,6 +37,7 @@ Basic operations:
    - Search an element.
    - Retrieve an element. (?) (get the info of the element)
    - Traverese the list, performing given operation on each element.
+
 Extended operations:
    - Determine if the list is empty.
    - Determine if the list is full.
