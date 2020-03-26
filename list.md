@@ -3,13 +3,17 @@ LIST
 
 
 Concept
+
 List:
+
 Def: A linear list is a finite, `ordered` sequence of data items known as
 elements (the order can be known as the position of the elements).
 
    | element_1 |----| element_2 |----| element_3 |----...
 
+
 Linear lists
+
 2 types:
    - General
       -- Unsorted.
@@ -18,7 +22,9 @@ Linear lists
       -- FIFO (queue) <first in first out> 
       -- LIFO (stack) <last in first out>
 
+
 List ADT:
+
 Def: 
 
 A list of elements of type T is a finite, ordered sequence of elements of
@@ -59,6 +65,7 @@ Extended operations:
 Array Implementation
 
 Dynamically Allocated Array:
+
 3 considered field: 
    - Size
    - Capacity
@@ -116,7 +123,7 @@ void DynamicArray::SetCapacity( int newCapacity )
 void DynamicArray::EnsureCapacity( int minCapacity )
 {
    /*
-   Ensure the capacity of current array won't larger than the required
+   Ensure the capacity of current array won't smaller than the required
    minCapacity
    */
    
@@ -129,5 +136,66 @@ void DynamicArray::EnsureCapacity( int minCapacity )
    }
 }
 
+void DynamicArray::pack()
+{
+   /*
+      Packing the capacity to the reason able amount according to size 
+   */
+   if ( size <= capacity/2 )
+   {
+      int newCapacity = (size*3)/2 + 1;
+      setCapacity( newCapacity );
+   }
+}
 
+void DynamicArray::trim()
+{
+   /*
+      Trim of the extend capacity, make the capacity = size   
+   */
+   int newCapacity = size;
+   setCapacity( newCapacity );
+}
+
+void DynamicArray::RangeCheck( int index )
+{
+   if ( index < 0 || index > size )
+      throw "Index out of bounds!";   
+}
+
+void DynamicArray::Set( int index, int value )
+{
+   RangeCheck( index );
+   storage[index] = value;
+}
+
+int DynamicArray::Get( int index )
+{
+   RangeCheck( index );
+   return storage[index]; 
+}
+
+void DynamicArray::InsertAt( int index, int value )
+{
+   RangeCheck( index );
+   EnsureCapacity( capacity + 1 );
+   int moveCount = size - index;
+   if ( moveCount != 0 )
+      memmove( storage + index + 1, storage + index, sizeof(int)*moveCount );
+   storage[index] = value;
+   size++;
+}
+
+void DynamicArray::RemoveAt( int index )
+{
+   RangeCheck( index );
+   int moveCount = size - index - 1;
+   if ( moveCount != 0 )
+      memmove( storage + index, storage + (index + 1), sizeof(int)*moveCount );
+   size--;
+   Pack();
+}
 ```
+Comments:
+   - Inserting or Removing operate in O(n).
+   - Clear, Empty, Full, Size, Replace and Retrieve in constant time.
