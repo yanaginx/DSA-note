@@ -229,8 +229,7 @@ Algorithm
 
 Implementation in C++
 ```C++
-int LinkedList::Search( int value, Node* &pPre, Node* &pLoc ) //gotta use
-reference because the pPre and pLoc change throroughly when searching
+int LinkedList::Search( int value, Node* &pPre, Node* &pLoc ) //gotta use reference because the pPre and pLoc change throroughly when searching
 {
    pPre = NULL;
    pLoc = this->head;
