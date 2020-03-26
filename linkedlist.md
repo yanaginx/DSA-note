@@ -213,23 +213,15 @@ Searching in a linked list:
 
 Successful searches: 3 outcomes:
    - Located first: 
-      pPre = NULL
-
-      pLoc = target
+      pPre = NULL; pLoc = target
    - Located middle:
-      pPre = pPre
-
-      pLoc = target 
+      pPre = pPre; pLoc = target 
    - Located last:
-      pPre = pPre
-
-      pLoc = target
+      pPre = pPre; pLoc = target
 
 Unsuccessful searces:
 
-   pPre = pPre
-
-   pLoc = NULL
+   pPre = pPre; pLoc = NULL
 
 Algorithm
 ```
