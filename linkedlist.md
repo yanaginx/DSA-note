@@ -54,7 +54,7 @@ struct Node
 };
 
 // or we can use class to define the Node, by using class we can initiate the
-value beforehand
+// value beforehand
 
 class Node
 {
@@ -229,7 +229,10 @@ Algorithm
 
 Implementation in C++
 ```C++
-int LinkedList::Search( int value, Node* &pPre, Node* &pLoc ) //gotta use reference because the pPre and pLoc change throroughly when searching
+int LinkedList::Search( int value, Node* &pPre, Node* &pLoc ) 
+// gotta use reference because the address value of pPre and pLoc changed
+// thoroughly through the search process
+
 {
    pPre = NULL;
    pLoc = this->head;
