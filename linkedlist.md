@@ -205,22 +205,30 @@ them.
 Searching in a linked list:
    - Sequence search
    - Function search of List ADT:
+
       `<ErrorCode> Search ( val target <dataType>, ref pPre <pointer>, ref pLoc
 <pointer> )`
+
    => Search a node and returns a pointer to it if found.
 
 Successful searches: 3 outcomes:
    - Located first: 
       pPre = NULL
+
       pLoc = target
    - Located middle:
       pPre = pPre
+
       pLoc = target 
    - Located last:
       pPre = pPre
+
       pLoc = target
+
 Unsuccessful searces:
+
    pPre = pPre
+
    pLoc = NULL
 
 Algorithm
