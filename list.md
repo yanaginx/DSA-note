@@ -132,7 +132,7 @@ void DynamicArray::EnsureCapacity( int minCapacity )
       int newCapacity = (capacity*3)/2 + 1;
       if ( newCapacity < minCapacity )
          newCapacity = minCapacity;
-      setCapacity( newCapacity );
+      SetCapacity( newCapacity );
    }
 }
 
@@ -144,7 +144,7 @@ void DynamicArray::pack()
    if ( size <= capacity/2 )
    {
       int newCapacity = (size*3)/2 + 1;
-      setCapacity( newCapacity );
+      SetCapacity( newCapacity );
    }
 }
 
@@ -154,7 +154,7 @@ void DynamicArray::trim()
       Trim of the extend capacity, make the capacity = size   
    */
    int newCapacity = size;
-   setCapacity( newCapacity );
+   SetCapacity( newCapacity );
 }
 
 void DynamicArray::RangeCheck( int index )
