@@ -136,7 +136,7 @@ void DynamicArray::EnsureCapacity( int minCapacity )
    }
 }
 
-void DynamicArray::pack()
+void DynamicArray::Pack()
 {
    /*
       Packing the capacity to the reason able amount according to size 
@@ -148,7 +148,7 @@ void DynamicArray::pack()
    }
 }
 
-void DynamicArray::trim()
+void DynamicArray::Trim()
 {
    /*
       Trim of the extend capacity, make the capacity = size   
