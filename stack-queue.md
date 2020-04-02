@@ -112,7 +112,7 @@ Queue: dequeue:
 
    The front and rear pointer will be set to NULL
 
-- Second encounter: Removing rear element of the queue:
+- Second encounter: Removing front element of the queue:
    
    Only the front pointer is updated
    
